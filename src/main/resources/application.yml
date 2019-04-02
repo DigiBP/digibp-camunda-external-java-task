@@ -1,0 +1,2 @@
+camunda-rest:
+  url: ${CAMUNDA_REST_URL:https://digibp.herokuapp.com/rest}

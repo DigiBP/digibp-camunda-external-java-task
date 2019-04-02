@@ -1,0 +1,13 @@
+{
+  "name": "Camunda External Java Task",
+  "description": "Camunda External Java Task",
+  "repository": "https://github.com/DigiBP/digibp-camunda-external-java-task",
+  "logo": "https://avatars3.githubusercontent.com/u/25099178",
+  "keywords": ["camunda", "java", "heroku"],
+  "env": {
+    "CAMUNDA_REST_URL": {
+      "description": "Camunda REST URL.",
+      "value": "https://digibp.herokuapp.com/rest"
+    }
+  }
+}
