@@ -1,0 +1,30 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "debug",
+            "type": "shell",
+            "command": "mvn",
+            "args": [
+                "spring-boot:run",
+                "-Dspring-boot.run.jvmArguments=\"-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005\""
+            ]
+        },
+        {
+            "label": "run",
+            "type": "shell",
+            "command": "mvn",
+            "args": [
+                "spring-boot:run"
+            ]
+        },
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "mvn",
+            "args": [
+                "clean build"
+            ]
+        }
+    ]
+}

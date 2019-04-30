@@ -13,7 +13,7 @@ import org.camunda.bpm.client.task.ExternalTask;
 import org.camunda.bpm.client.task.ExternalTaskService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -21,22 +21,16 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Component
-public class PizzaClient {
+public class PizzaClientIntegration {
 
-    @Value("${camunda-rest.url}")
-    private String camundaRestUrl;
+    private Logger logger = LoggerFactory.getLogger(PizzaClientIntegration.class);
 
-    private Logger logger = LoggerFactory.getLogger(PizzaClient.class);
+    @Autowired
+    ExternalTaskClient client;
 
     @PostConstruct
     private void subscribeTopics() {
-        ExternalTaskClient client = ExternalTaskClient.create()
-                .baseUrl(camundaRestUrl)
-                .asyncResponseTimeout(29000)
-                .disableBackoffStrategy()
-                .build();
-
-        client.subscribe("GetMenu")
+        client.subscribe("GetMenuInt")
                 .tenantIdIn("showcase")
                 .handler((ExternalTask externalTask, ExternalTaskService externalTaskService) -> {
                     try {
@@ -54,7 +48,7 @@ public class PizzaClient {
                 .open();
 
 
-        client.subscribe("AddPizza")
+        client.subscribe("AddPizzaInt")
                 .tenantIdIn("showcase")
                 .handler((ExternalTask externalTask, ExternalTaskService externalTaskService) -> {
                     try {
