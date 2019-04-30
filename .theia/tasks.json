@@ -4,10 +4,9 @@
         {
             "label": "debug",
             "type": "shell",
-            "command": "mvn",
+            "command": "mvnDebug",
             "args": [
-                "spring-boot:run",
-                "-Dspring-boot.run.jvmArguments=\"-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005\""
+                "spring-boot:run"
             ]
         },
         {
@@ -23,7 +22,8 @@
             "type": "shell",
             "command": "mvn",
             "args": [
-                "clean build"
+                "clean",
+                "compile"
             ]
         }
     ]
