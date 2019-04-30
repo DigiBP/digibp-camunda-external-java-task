@@ -8,8 +8,6 @@ package ch.fhnw.digibp.external.client;
 import org.camunda.bpm.client.ExternalTaskClient;
 import org.camunda.bpm.client.task.ExternalTask;
 import org.camunda.bpm.client.task.ExternalTaskService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -18,8 +16,6 @@ import java.util.*;
 
 @Component
 public class SurpriseMenuClient {
-
-    private Logger logger = LoggerFactory.getLogger(SurpriseMenuClient.class);
 
     @Autowired
     ExternalTaskClient client;

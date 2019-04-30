@@ -11,8 +11,6 @@ import kong.unirest.Unirest;
 import org.camunda.bpm.client.ExternalTaskClient;
 import org.camunda.bpm.client.task.ExternalTask;
 import org.camunda.bpm.client.task.ExternalTaskService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -22,8 +20,6 @@ import java.util.Map;
 
 @Component
 public class PizzaClientIntegration {
-
-    private Logger logger = LoggerFactory.getLogger(PizzaClientIntegration.class);
 
     @Autowired
     ExternalTaskClient client;
