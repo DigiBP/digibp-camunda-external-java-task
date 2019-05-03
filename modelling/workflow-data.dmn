@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" id="Definitions_1ulfove" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="3.1.0">
+  <decision id="Decision_0jqcged" name="Decision 1">
+    <decisionTable id="decisionTable_1">
+      <input id="input_1">
+        <inputExpression id="inputExpression_1" typeRef="string">
+          <text>inputA</text>
+        </inputExpression>
+      </input>
+      <output id="output_1" name="outputA" typeRef="string" />
+      <output id="OutputClause_0u2yxa6" name="outputB" typeRef="string" />
+    </decisionTable>
+  </decision>
+</definitions>
