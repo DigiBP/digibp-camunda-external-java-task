@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:bioc="http://bpmn.io/schema/bpmn/biocolor/1.0" id="Definitions_0xuj4kr" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.1.0">
   <bpmn:collaboration id="Collaboration_0pk5jq1">
-    <bpmn:participant id="Participant_0u958uc" name="PizzaMenu Connector" processRef="Process_064jch6" />
+    <bpmn:participant id="Participant_0u958uc" name="PizzaMenu Integromat Connector" processRef="Process_064jch6" />
     <bpmn:participant id="Participant_06cwomw" name="PizzaMenu External" processRef="Process_18z591h" />
     <bpmn:participant id="Participant_0zq4ux2" name="Integromat" processRef="Process_0v5dfs8" />
     <bpmn:participant id="Participant_02zl8bx" name="External Task Client" processRef="Process_1qyhwuq" />
@@ -18,7 +18,7 @@
     <bpmn:messageFlow id="MessageFlow_0e7o6pa" name="GET&#10;request" sourceRef="Task_1puvpx3" targetRef="Task_0dxy6wr" />
     <bpmn:messageFlow id="MessageFlow_1rjvq1f" name="GET&#10;response&#10;(JSON)" sourceRef="Task_0dxy6wr" targetRef="Task_1puvpx3" />
   </bpmn:collaboration>
-  <bpmn:process id="Process_064jch6" name="PizzaMenuConnector" isExecutable="true">
+  <bpmn:process id="Process_064jch6" name="PizzaMenuIntegromatConnector" isExecutable="true">
     <bpmn:startEvent id="StartEvent_1" name="Requested Menu">
       <bpmn:extensionElements>
         <camunda:formData>

@@ -9,7 +9,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 @Repository
 public class MenuRepository{
@@ -22,9 +21,5 @@ public class MenuRepository{
     public void setMenuItem(String menuItem) {
         if(!menuItem.isEmpty())
             menuItems.add(menuItem);
-    }
-
-    public String getRandomMenuItem() {
-        return menuItems.get(new Random().nextInt(menuItems.size()));
     }
 }
