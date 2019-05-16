@@ -7,19 +7,33 @@ package ch.fhnw.digibp.external.data;
 
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 @Repository
-public class MenuRepository{
-    private List<String> menuItems = new ArrayList<>();
+public class MenuRepository {
+    private Map<String, List<String>> menuItemsDB = new HashMap<>();
 
-    public String getMenuItems() {
-        return String.join(", ",  menuItems);
+    public String getMenuItems(String id) {
+        id = Objects.toString(id, "");
+        if(menuItemsDB.containsKey(id)){
+            return String.join(", ", menuItemsDB.get(id));
+        }
+        return "";
     }
 
-    public void setMenuItem(String menuItem) {
+    public void setMenuItem(String id, String menuItem) {
+        id = Objects.toString(id, "");
+        if(!menuItemsDB.containsKey(id)){
+            menuItemsDB.put(id, new ArrayList<>());
+        }
         if(!menuItem.isEmpty())
-            menuItems.add(menuItem);
+            menuItemsDB.get(id).add(menuItem);
+    }
+
+    public void flushMenuItems(String id) {
+        id = Objects.toString(id, "");
+        if(menuItemsDB.containsKey(id)){
+            menuItemsDB.get(id).clear();
+        }
     }
 }

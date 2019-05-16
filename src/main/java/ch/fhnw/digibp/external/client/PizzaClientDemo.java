@@ -29,11 +29,12 @@ public class PizzaClientDemo {
     private void subscribeTopics() {
 
         client.subscribe("GetMenu")
-                .tenantIdIn("showcase")
+                //.tenantIdIn("showcase")
                 .handler((ExternalTask externalTask, ExternalTaskService externalTaskService) -> {
                     try {
                         Map<String, Object> variables = new HashMap<>();
-                        variables.put("pizzaList", menuRepository.getMenuItems());
+                        externalTask.getTenantId();
+                        variables.put("pizzaList", menuRepository.getMenuItems(externalTask.getTenantId()));
 
                         externalTaskService.complete(externalTask, variables);
                     } catch (Exception e) {
@@ -44,11 +45,11 @@ public class PizzaClientDemo {
 
 
         client.subscribe("AddPizza")
-                .tenantIdIn("showcase")
+                //.tenantIdIn("showcase")
                 .handler((ExternalTask externalTask, ExternalTaskService externalTaskService) -> {
                     try {
                         String pizzaName = externalTask.getAllVariablesTyped().getValueTyped("pizzaName").getValue().toString();
-                        menuRepository.setMenuItem(pizzaName);
+                        menuRepository.setMenuItem(externalTask.getTenantId(), pizzaName);
 
                         externalTaskService.complete(externalTask);
                     } catch (Exception e) {

@@ -24,7 +24,6 @@ public class SurpriseMenuClient {
     private void subscribeTopics() {
 
         client.subscribe("GetSurpriseMenu")
-                .tenantIdIn("showcase")
                 .handler((ExternalTask externalTask, ExternalTaskService externalTaskService) -> {
                     try {
                         Map<String, Object> variables = new HashMap<>();

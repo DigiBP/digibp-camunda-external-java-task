@@ -28,7 +28,7 @@ public class OrderFulfillmentClient {
     private void subscribeTopics() {
 
         client.subscribe("Payment")
-                .tenantIdIn("showcase")
+                //.tenantIdIn("showcase")
                 .handler((ExternalTask externalTask, ExternalTaskService externalTaskService) -> {
                     try {
                         if(new Random().nextInt(2)==0) // 1/3 fail
@@ -46,7 +46,7 @@ public class OrderFulfillmentClient {
                 .open();
 
         client.subscribe("RefundPayment")
-                .tenantIdIn("showcase")
+                //.tenantIdIn("showcase")
                 .handler((ExternalTask externalTask, ExternalTaskService externalTaskService) -> {
                     try {
                         String orderAmount = externalTask.getAllVariablesTyped().getValueTyped("amount").getValue().toString();
@@ -61,7 +61,7 @@ public class OrderFulfillmentClient {
                 .open();
 
         client.subscribe("Inventory")
-                .tenantIdIn("showcase")
+                //.tenantIdIn("showcase")
                 .handler((ExternalTask externalTask, ExternalTaskService externalTaskService) -> {
                     try {
                         if(new Random().nextInt(2)==0) // 1/3 fail
@@ -76,7 +76,7 @@ public class OrderFulfillmentClient {
                 .open();
 
         client.subscribe("Shipping")
-                .tenantIdIn("showcase")
+                //.tenantIdIn("showcase")
                 .handler((ExternalTask externalTask, ExternalTaskService externalTaskService) -> {
                     try {
                         logger.info("Goods delivered");
@@ -88,5 +88,4 @@ public class OrderFulfillmentClient {
                 })
                 .open();
     }
-
 }
