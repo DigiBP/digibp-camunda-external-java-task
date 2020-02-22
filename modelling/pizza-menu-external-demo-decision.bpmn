@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_0xuj4kr" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.1.0">
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_0xuj4kr" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="3.6.0">
   <bpmn:collaboration id="Collaboration_0pk5jq1">
     <bpmn:participant id="Participant_06cwomw" name="PizzaMenu External Demo Decision" processRef="Process_18z591h" />
   </bpmn:collaboration>
   <bpmn:process id="Process_18z591h" name="PizzaMenuExternalDemoDecision" isExecutable="true">
-    <bpmn:startEvent id="StartEvent_1knhi1d" name="Surprise menu requested">
-      <bpmn:outgoing>SequenceFlow_1xwlfmm</bpmn:outgoing>
-    </bpmn:startEvent>
     <bpmn:serviceTask id="ServiceTask_0hm37c6" name="Get Surprise Menu" camunda:type="external" camunda:topic="GetSurpriseMenu">
       <bpmn:incoming>SequenceFlow_1xwlfmm</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_0awzjfx</bpmn:outgoing>
@@ -58,6 +55,14 @@
       <bpmn:incoming>SequenceFlow_05sffxj</bpmn:incoming>
       <bpmn:outgoing>SequenceFlow_1cicm6f</bpmn:outgoing>
     </bpmn:userTask>
+    <bpmn:startEvent id="StartEvent_1knhi1d" name="Surprise menu requested">
+      <bpmn:extensionElements>
+        <camunda:formData>
+          <camunda:formField id="vegetarianGuests" label="Vegetarian Guests?" type="boolean" defaultValue="false" />
+        </camunda:formData>
+      </bpmn:extensionElements>
+      <bpmn:outgoing>SequenceFlow_1xwlfmm</bpmn:outgoing>
+    </bpmn:startEvent>
     <bpmn:association id="Association_06ye971" sourceRef="ServiceTask_0hm37c6" targetRef="TextAnnotation_1s6xltl" />
     <bpmn:textAnnotation id="TextAnnotation_1s6xltl">
       <bpmn:text>Topic "GetSurpriseMenu"
@@ -68,6 +73,11 @@ Variables menu:string</bpmn:text>
       <bpmn:text>Expression 
 ${menu == "..."}</bpmn:text>
     </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="TextAnnotation_169cix7">
+      <bpmn:text>Form fields
+vegetarian:boolean</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_0p2mgxd" sourceRef="StartEvent_1knhi1d" targetRef="TextAnnotation_169cix7" />
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_0pk5jq1">
@@ -75,9 +85,9 @@ ${menu == "..."}</bpmn:text>
         <dc:Bounds x="129" y="87" width="767" height="539" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="StartEvent_1knhi1d_di" bpmnElement="StartEvent_1knhi1d">
-        <dc:Bounds x="240" y="185" width="36" height="36" />
+        <dc:Bounds x="212" y="185" width="36" height="36" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="222" y="228" width="72" height="27" />
+          <dc:Bounds x="194" y="228" width="72" height="27" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="EndEvent_0bccgk0_di" bpmnElement="EndEvent_0bccgk0">
@@ -97,7 +107,7 @@ ${menu == "..."}</bpmn:text>
         <di:waypoint x="397" y="143" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="SequenceFlow_1xwlfmm_di" bpmnElement="SequenceFlow_1xwlfmm">
-        <di:waypoint x="276" y="203" />
+        <di:waypoint x="248" y="203" />
         <di:waypoint x="347" y="203" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="ExclusiveGateway_0gwyozy_di" bpmnElement="ExclusiveGateway_0gwyozy" isMarkerVisible="true">
@@ -178,6 +188,13 @@ ${menu == "..."}</bpmn:text>
       <bpmndi:BPMNEdge id="Association_1up2azt_di" bpmnElement="Association_1up2azt">
         <di:waypoint x="551" y="190" />
         <di:waypoint x="602" y="139" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="TextAnnotation_169cix7_di" bpmnElement="TextAnnotation_169cix7">
+        <dc:Bounds x="170" y="105" width="120" height="38" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Association_0p2mgxd_di" bpmnElement="Association_0p2mgxd">
+        <di:waypoint x="230" y="185" />
+        <di:waypoint x="230" y="143" />
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>

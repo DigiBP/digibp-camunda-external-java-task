@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Debug (Attach)",
+            "request": "attach",
+            "hostName": "localhost",
+            "port": 8000
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ExternalJavaTaskApplication<digibp-camunda-external-java-task>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "ch.fhnw.digibp.external.ExternalJavaTaskApplication",
+            "projectName": "digibp-camunda-external-java-task",
+            "args": ""
+        }
+    ]
+}
