@@ -1,4 +1,5 @@
 {
+    "version": "0.2.0",
     "configurations": [
         {
             "type": "java",
@@ -7,15 +8,19 @@
             "hostName": "localhost",
             "port": 8000
         },
+        
         {
             "type": "java",
-            "name": "Spring Boot-ExternalJavaTaskApplication<digibp-camunda-external-java-task>",
+            "name": "Debug (Launch) - Current File",
             "request": "launch",
-            "cwd": "${workspaceFolder}",
-            "console": "internalConsole",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch) - ExternalJavaTaskApplication",
+            "request": "launch",
             "mainClass": "ch.fhnw.digibp.external.ExternalJavaTaskApplication",
-            "projectName": "digibp-camunda-external-java-task",
-            "args": ""
+            "projectName": "digibp-camunda-external-java-task"
         }
     ]
 }
