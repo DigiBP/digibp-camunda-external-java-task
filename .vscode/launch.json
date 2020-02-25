@@ -3,12 +3,11 @@
     "configurations": [
         {
             "type": "java",
-            "name": "Debug (Attach)",
-            "request": "attach",
-            "hostName": "localhost",
-            "port": 8000
+            "name": "Debug (Launch) - ExternalJavaTaskApplication",
+            "request": "launch",
+            "mainClass": "ch.fhnw.digibp.external.ExternalJavaTaskApplication",
+            "projectName": "digibp-camunda-external-java-task"
         },
-        
         {
             "type": "java",
             "name": "Debug (Launch) - Current File",
@@ -17,10 +16,10 @@
         },
         {
             "type": "java",
-            "name": "Debug (Launch) - ExternalJavaTaskApplication",
-            "request": "launch",
-            "mainClass": "ch.fhnw.digibp.external.ExternalJavaTaskApplication",
-            "projectName": "digibp-camunda-external-java-task"
+            "name": "Debug (Attach)",
+            "request": "attach",
+            "hostName": "localhost",
+            "port": 8000
         }
     ]
 }

@@ -4,6 +4,7 @@
         {
             "label": "debug",
             "type": "shell",
+            "group": "none",
             "command": "mvnDebug",
             "args": [
                 "spring-boot:run"
@@ -12,6 +13,7 @@
         {
             "label": "run",
             "type": "shell",
+            "group": "none",
             "command": "mvn",
             "args": [
                 "spring-boot:run"
@@ -20,10 +22,21 @@
         {
             "label": "build",
             "type": "shell",
+            "group": "build",
             "command": "mvn",
             "args": [
                 "clean",
                 "compile"
+            ]
+        }
+        ,
+        {
+            "label": "clean",
+            "type": "shell",
+            "group": "build",
+            "command": "mvn",
+            "args": [
+                "clean"
             ]
         }
     ]
