@@ -29,9 +29,9 @@ public class SurpriseMenuClient {
                 .handler((ExternalTask externalTask, ExternalTaskService externalTaskService) -> {
                     try {
                         Boolean vegetarianGuests = false;
-                        TypedValue vegetarianGuestsValue = externalTask.getVariableTyped("vegetarianGuests");
+                        TypedValue vegetarianGuestsValue = externalTask.getVariableTyped("vegetarian");
                         if(vegetarianGuestsValue!=null)
-                            vegetarianGuests = (Boolean) externalTask.getVariableTyped("vegetarianGuests").getValue();
+                            vegetarianGuests = (Boolean) externalTask.getVariableTyped("vegetarian").getValue();
                         String menu;
                         if(vegetarianGuests){
                             menu = Arrays.asList("pizza", "pasta", "verdura").get(new Random().nextInt(3));
