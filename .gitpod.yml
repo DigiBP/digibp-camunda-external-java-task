@@ -1,12 +1,13 @@
-tasks:
-- init: ./mvnw package -DskipTests
-
 ports:
   - port: 8080
     onOpen: notify
 
 vscode:
   extensions:
-    - vscjava.vscode-java-pack
+    - redhat.java
+    - vscjava.vscode-maven
+    - vscjava.vscode-java-debug
+    - vscjava.vscode-java-dependency
     - Pivotal.vscode-spring-boot
     - vscjava.vscode-spring-boot-dashboard
+    - VisualStudioExptTeam.vscodeintellicode
