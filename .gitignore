@@ -1,6 +1,6 @@
 
-# Created by https://www.gitignore.io/api/java,maven,eclipse,intellij,netbeans,visualstudiocode
-# Edit at https://www.gitignore.io/?templates=java,maven,eclipse,intellij,netbeans,visualstudiocode
+# Created by https://www.toptal.com/developers/gitignore/api/java,maven,eclipse,netbeans,visualstudiocode,intellij+all
+# Edit at https://www.toptal.com/developers/gitignore?templates=java,maven,eclipse,netbeans,visualstudiocode,intellij+all
 
 ### Eclipse ###
 .metadata
@@ -53,26 +53,23 @@ local.properties
 
 # Annotation Processing
 .apt_generated/
+.apt_generated_test/
 
 # Scala IDE specific (Scala & Java development for Eclipse)
 .cache-main
 .scala_dependencies
 .worksheet
 
-### Eclipse Patch ###
-# Eclipse Core
+# Uncomment this line if you wish to ignore the project description file.
+# Typically, this file would be tracked if it contains build/dependency configurations:
 .project
 
-# JDT-specific (Eclipse Java Development Tools)
-.classpath
-
-# Annotation Processing
-.apt_generated
-
+### Eclipse Patch ###
+# Spring Boot Tooling
 .sts4-cache/
 
-### Intellij ###
-# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and WebStorm
+### Intellij+all ###
+# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio, WebStorm and Rider
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
 # User-specific stuff
@@ -102,6 +99,9 @@ local.properties
 # When using Gradle or Maven with auto-import, you should exclude module files,
 # since they will be recreated, and may cause churn.  Uncomment if using
 # auto-import.
+# .idea/artifacts
+# .idea/compiler.xml
+# .idea/jarRepositories.xml
 # .idea/modules.xml
 # .idea/*.iml
 # .idea/modules
@@ -141,23 +141,21 @@ fabric.properties
 # Android studio 3.1+ serialized cache file
 .idea/caches/build_file_checksums.ser
 
-### Intellij Patch ###
-# Comment Reason: https://github.com/joeblau/gitignore.io/issues/186#issuecomment-215987721
+### Intellij+all Patch ###
+# Ignores the whole .idea folder and all .iml files
+# See https://github.com/joeblau/gitignore.io/issues/186 and https://github.com/joeblau/gitignore.io/issues/360
 
-# *.iml
-# modules.xml
-# .idea/misc.xml
-# *.ipr
+.idea/
+
+# Reason: https://github.com/joeblau/gitignore.io/issues/186#issuecomment-249601023
+
+*.iml
+modules.xml
+.idea/misc.xml
+*.ipr
 
 # Sonarlint plugin
-.idea/**/sonarlint/
-
-# SonarQube Plugin
-.idea/**/sonarIssues.xml
-
-# Markdown Navigator plugin
-.idea/**/markdown-navigator.xml
-.idea/**/markdown-navigator/
+.idea/sonarlint
 
 ### Java ###
 # Compiled class file
@@ -194,6 +192,7 @@ release.properties
 dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
+# https://github.com/takari/maven-wrapper#usage-without-binary-jar
 .mvn/wrapper/maven-wrapper.jar
 .flattened-pom.xml
 
@@ -209,13 +208,13 @@ nbdist/
 
 ### VisualStudioCode ###
 .vscode/*
-!.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
-!.vscode/extensions.json
+*.code-workspace
 
 ### VisualStudioCode Patch ###
 # Ignore all local history of files
 .history
+.ionide
 
-# End of https://www.gitignore.io/api/java,maven,eclipse,intellij,netbeans,visualstudiocode
+# End of https://www.toptal.com/developers/gitignore/api/java,maven,eclipse,netbeans,visualstudiocode,intellij+all
