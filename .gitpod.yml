@@ -5,9 +5,6 @@ ports:
 vscode:
   extensions:
     - redhat.java
-    - vscjava.vscode-maven
     - vscjava.vscode-java-debug
-    - vscjava.vscode-java-dependency
     - Pivotal.vscode-spring-boot
-    - vscjava.vscode-spring-boot-dashboard
     - VisualStudioExptTeam.vscodeintellicode
