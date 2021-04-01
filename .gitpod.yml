@@ -1,3 +1,9 @@
 ports:
   - port: 8080
     onOpen: notify
+
+vscode:
+  extensions:
+    - redhat.java
+    - vscjava.vscode-java-debug
+    - pivotal.vscode-spring-boot
